@@ -1,99 +1,140 @@
-> ⚠️ **Achtung:** Dieses Repository befindet sich noch im Aufbau! Funktionen können unvollständig sein, Fehler auftreten und sich jederzeit ändern. Nutzung auf eigene Verantwortung.
-
-
 # Finanzfluss Exporter 🚀
 
 ![Python](https://img.shields.io/badge/python-3.8%2B-blue)
 ![Selenium](https://img.shields.io/badge/selenium-supported-green)
+![Security](https://img.shields.io/badge/security-encrypted-brightgreen)
 ![License: MIT](https://img.shields.io/badge/license-MIT-yellow)
 
-**Finanzfluss Exporter** ist ein Python-Skript, das automatisch Transaktionen aus einer Web-Finanzanwendung ausliest und in einer JSON-Datei speichert. Ideal für alle, die ihre Transaktionen aus verschiedenen Konten exportieren, zentral verwalten und für eigene Analysen oder Auswertungen weiterverarbeiten möchten.
+> ⚠️ **Achtung:** Dieses Repository befindet sich noch im Aufbau! Funktionen können unvollständig sein, Fehler auftreten und sich jederzeit ändern. Nutzung auf eigene Verantwortung.
 
-
----
-
-## Features ✨
-
-- Automatisches Einloggen in die Finanz-Webanwendung mit Selenium.
-- Scraping von Transaktionen verschiedener Konten.
-- Extrahiert: Datum, Buchungsinformationen, Betrag, Zusatzinformationen und Konto.
-- Ausgabe als JSON-Datei (`transaktionen.json`) für Weiterverarbeitung.
-- Übersichtliche Konsolen-Ausgabe aller Transaktionen.
-- Einfach erweiterbar für weitere Konten oder Analysefunktionen.
+**Finanzfluss Exporter** ist ein Python-Skript, das automatisch Transaktionen aus deiner Finanz-Webanwendung ausliest und sicher in einer JSON-Datei speichert. Perfekt für alle, die ihre Finanzdaten zentral verwalten und analysieren möchten.
 
 ---
 
-## Voraussetzungen 📦
+## ✨ Features
 
-* Python 3.8+
-* [Selenium](https://pypi.org/project/selenium/)
-* Firefox-Browser
-* [Geckodriver](https://github.com/mozilla/geckodriver/releases) im PATH
+- 🔐 **Sicheres Login** mit System-Keyring Verschlüsselung
+- 📊 **Automatisches Scraping** von Transaktionen mehrerer Konten
+- 💾 **JSON-Export** für einfache Weiterverarbeitung
+- 👀 **Übersichtliche Konsolenausgabe** aller Transaktionen
+- ⚡ **Einfach erweiterbar** für weitere Konten und Funktionen
+- 🛡️ **Maximale Sicherheit** - keine Passwörter im Code
 
-Installation von Selenium:
+---
+
+## 📦 Voraussetzungen
 
 ```bash
-pip install selenium
+# Erforderliche Pakete installieren
+pip install selenium keyring
 ```
+
+**Browser:** Firefox (wird automatisch gesteuert)
 
 ---
 
-## Einrichtung ⚙️
+## ⚙️ Einrichtung
 
-1. **Login-Daten eintragen**
-   Öffne `finanzfluss_copilot.py` und trage deine Daten ein:
-
-```python
-EMAIL = "deine_email@beispiel.de"
-PASSWORD = "dein_passwort"
+### 1. Abhängigkeiten installieren
+```bash
+pip install selenium keyring
 ```
 
-> ⚠️ Sicherheit: Passwort im Klartext, Datei sicher aufbewahren!
+### 2. Passwort sicher speichern
+Erstelle eine temporäre Datei `save_password.py`:
 
-2. **Konten konfigurieren**
-   Füge weitere Konten in der Variable `ACCOUNTS` hinzu:
+```python
+import keyring
+
+# DEINE DATEN HIER EINTRAGEN:
+EMAIL = "deine_email@beispiel.de"
+PASSWORD = "dein_passwort_hier"
+
+# Passwort sicher im System-Keyring speichern
+keyring.set_password("finanzfluss", EMAIL, PASSWORD)
+print("✅ Passwort wurde sicher gespeichert!")
+```
+
+Führe die Datei **einmalig** aus:
+```bash
+python save_password.py
+```
+
+**🔒 WICHTIG:** Lösche oder bearbeite die Datei anschließend, um das Passwort zu entfernen!
+
+### 3. Konten konfigurieren
+Öffne `finanzfluss_copilot.py` und passe die Konten-URLs an:
 
 ```python
 ACCOUNTS = {
     "ING": "https://www.deine-finanz-app.de/user/accounts/4076571",
     "Trade Republic": "https://www.deine-finanz-app.de/user/accounts/4076579"
 }
-```
 
-3. **Geckodriver installieren**
-   Stelle sicher, dass Geckodriver im System-PATH liegt.
+EMAIL = "deine_email@beispiel.de"  # Hier deine E-Mail eintragen
+```
 
 ---
 
-## Nutzung 🚀
+## 🚀 Nutzung
 
 ```bash
 python finanzfluss_copilot.py
 ```
 
-* Firefox öffnet sich und loggt dich automatisch ein.
-* Transaktionen werden ausgelesen und in der Konsole angezeigt.
-* Ergebnisse werden in `transaktionen.json` gespeichert.
-* Nach Abschluss Enter drücken, um den Browser zu schließen.
+**Ablauf:**
+1. Firefox öffnet sich automatisch
+2. Login mit sicher aus dem Keyring geladenem Passwort
+3. Transaktionen werden von allen konfigurierten Konten gescraped
+4. Ergebnisse werden in der Konsole angezeigt
+5. Daten werden in `transaktionen.json` gespeichert
+6. Browser schließt sich nach Bestätigung
 
 ---
 
-## JSON-Beispiel 📝
+## 🔒 Sicherheitsfeatures
+
+- **Keine Passwörter im Code** oder Dateien
+- **Verschlüsselte Speicherung** im System-Keyring
+- **Automatische Verschlüsselung** durch Betriebssystem
+- **Sichere Abfrage** bei jeder Ausführung
+
+---
+
+## 🗝️ Passwort-Verwaltung
+
+**Passwort aktualisieren:**
+```bash
+# save_password.py erneut ausführen und neues Passwort eintragen
+python save_password.py
+```
+
+**Passwort-Status prüfen:**
+```python
+import keyring
+print("Passwort vorhanden:", bool(keyring.get_password("finanzfluss", "deine_email@beispiel.de")))
+```
+
+---
+
+## 📊 JSON-Ausgabe Beispiel
+
+Die generierte `transaktionen.json`:
 
 ```json
 [
   {
     "datum": "2025-09-14",
-    "buchung": "Gehalt",
-    "betrag": "2500,00 €",
+    "buchung": "Gehaltseingang",
+    "betrag": "2.500,00 €",
     "zusatzinfo": "",
     "konto": "ING"
   },
   {
     "datum": "2025-09-10",
-    "buchung": "Online Shopping",
-    "betrag": "-45,99 €",
-    "zusatzinfo": "Kreditkartenabbuchung",
+    "buchung": "Amazon Einkauf",
+    "betrag": "-49,99 €",
+    "zusatzinfo": "Online-Shopping",
     "konto": "Trade Republic"
   }
 ]
@@ -101,49 +142,30 @@ python finanzfluss_copilot.py
 
 ---
 
-## Sicherheit & Hinweise ⚠️
+## 🛠️ Problembehebung
 
-* Änderungen auf der Finanz-Webseite können das Skript unterbrechen.
-* Zugangsdaten niemals öffentlich teilen.
-* Nutzung solcher Skripte erfolgt auf eigene Verantwortung – offizielle Erlaubnis durch Anbieter nicht gegeben.
+**Falls das Passwort nicht gefunden wird:**
+1. Sicherstellen, dass `save_password.py` ausgeführt wurde
+2. E-Mail Adresse in Script und Save-Script identisch
+3. System-Keyring Service ist aktiviert
 
----
-
-## Ausblick / Ideen 💡
-
-* Automatische Speicherung in Datenbanken (SQLite, PostgreSQL, etc.).
-* Erstellung von Monatsberichten oder Diagrammen.
-* Export in CSV oder Excel.
-* Erweiterung auf weitere Finanz-Tools oder APIs.
+**Bei Login-Problemen:**
+- Webseiten-Struktur könnte sich geändert haben
+- Captcha oder 2FA könnte den Login blockieren
 
 ---
 
-## Lizenz 📄
+## 💡 Zukünftige Erweiterungen
 
-Dieses Projekt ist unter der **MIT-Lizenz** lizenziert. Siehe [LICENSE](LICENSE) für Details.
-
----
-
-## Beispiel-Daten für Tests 📂
-
-Für die Entwicklung können Beispieldaten direkt ins Repo gelegt werden:
-
-`sample_transaktionen.json`:
-
-```json
-[
-  {
-    "datum": "2025-01-01",
-    "buchung": "Test-Transaktion",
-    "betrag": "100,00 €",
-    "zusatzinfo": "",
-    "konto": "ING"
-  }
-]
-```
-
-Damit lassen sich Funktionen entwickeln und testen, ohne sich immer einloggen zu müssen.
+- [ ] Datenbank-Integration (SQLite, PostgreSQL)
+- [ ] Automatische Berichterstellung
+- [ ] CSV/Excel-Export
+- [ ] Grafische Auswertungen
+- [ ] API-Anbindung für weitere Finanzdienste
+- [ ] Scheduled Auto-Runs
 
 ---
 
-**Viel Spaß beim Auslesen deiner Transaktionen! 🚀**
+## 📄 Lizenz
+
+MIT License - siehe [LICENSE](LICENSE) Datei für Details.
