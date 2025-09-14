@@ -157,12 +157,10 @@ Die generierte `transaktionen.json`:
 
 ## 💡 Zukünftige Erweiterungen
 
-- [ ] Datenbank-Integration (SQLite, PostgreSQL)
 - [ ] Automatische Berichterstellung
 - [ ] CSV/Excel-Export
-- [ ] Grafische Auswertungen
-- [ ] API-Anbindung für weitere Finanzdienste
-- [ ] Scheduled Auto-Runs
+- [ ] Depotbestand scrapen (Aktien, Fonds, Stückzahl, Kauf- und Tageskurs)
+- [ ] Dividendenübersicht inkl. geplanter Ausschüttungen
 
 ---
 
