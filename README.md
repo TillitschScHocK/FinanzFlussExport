@@ -67,8 +67,8 @@ python save_password.py
 
 ```python
 ACCOUNTS = {
-    "ING": "https://www.deine-finanz-app.de/user/accounts/4076571",
-    "Trade Republic": "https://www.deine-finanz-app.de/user/accounts/4076579"
+    "ING": "https://www.deine-finanz-app.de/user/accounts/406....",
+    "Trade Republic": "https://www.deine-finanz-app.de/user/accounts/406...."
 }
 
 EMAIL = "deine_email@beispiel.de"  # Hier deine E-Mail eintragen
