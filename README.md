@@ -1,16 +1,16 @@
-# Finanzfluss Copilot 🚀
+# Finanzfluss Exporter 🚀
 
 ![Python](https://img.shields.io/badge/python-3.8%2B-blue)
 ![Selenium](https://img.shields.io/badge/selenium-supported-green)
 ![License: MIT](https://img.shields.io/badge/license-MIT-yellow)
 
-**Finanzfluss Copilot** ist ein Python-Skript, das automatisch Transaktionen aus [Finanzfluss](https://www.finanzfluss.de/) ausliest und in einer JSON-Datei speichert. Ideal für Entwickler, die ihre Finanzdaten automatisiert analysieren oder weiterverarbeiten möchten.
+**Finanzfluss Exporter** ist ein Python-Skript, das automatisch Transaktionen aus einer Web-Finanzanwendung ausliest und in einer JSON-Datei speichert. Ideal für Entwickler, die ihre Finanzdaten automatisiert analysieren oder weiterverarbeiten möchten.
 
 ---
 
 ## Features ✨
 
-- Automatisches Einloggen in Finanzfluss mit Selenium.
+- Automatisches Einloggen in die Finanz-Webanwendung mit Selenium.
 - Scraping von Transaktionen verschiedener Konten.
 - Extrahiert: Datum, Buchungsinformationen, Betrag, Zusatzinformationen und Konto.
 - Ausgabe als JSON-Datei (`transaktionen.json`) für Weiterverarbeitung.
@@ -86,8 +86,8 @@ PASSWORD = "dein_passwort"
 
 ```python
 ACCOUNTS = {
-    "ING": "https://www.finanzfluss.de/user/accounts/4076571",
-    "Trade Republic": "https://www.finanzfluss.de/user/accounts/4076579"
+    "ING": "https://www.deine-finanz-app.de/user/accounts/4076571",
+    "Trade Republic": "https://www.deine-finanz-app.de/user/accounts/4076579"
 }
 ```
 
@@ -134,9 +134,9 @@ python finanzfluss_copilot.py
 
 ## Sicherheit & Hinweise ⚠️
 
-* Änderungen auf der Finanzfluss-Webseite können das Skript unterbrechen.
+* Änderungen auf der Finanz-Webseite können das Skript unterbrechen.
 * Zugangsdaten niemals öffentlich teilen.
-* Nutzung solcher Skripte erfolgt auf eigene Verantwortung – Finanzfluss erlaubt dies offiziell nicht.
+* Nutzung solcher Skripte erfolgt auf eigene Verantwortung – offizielle Erlaubnis durch Anbieter nicht gegeben.
 
 ---
 
