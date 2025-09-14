@@ -20,41 +20,6 @@
 
 ---
 
-## Badges / GitHub-Integrationen 🛠
-
-- **Python-Version**: 3.8+
-- **Selenium-Unterstützung**: ✔
-- **Lizenz**: MIT
-- **CI/CD**: GitHub Actions möglich (z.B. automatisches Testen von Skripten oder Linting)
-
-Beispiel GitHub Actions Workflow `.github/workflows/python-app.yml`:
-
-```yaml
-name: Python application
-
-on: [push, pull_request]
-
-jobs:
-  build:
-
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v3
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.11'
-    - name: Install dependencies
-      run: pip install selenium
-    - name: Lint with flake8
-      run: |
-        pip install flake8
-        flake8 .
-````
-
----
-
 ## Voraussetzungen 📦
 
 * Python 3.8+
