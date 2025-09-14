@@ -1,3 +1,6 @@
+> ⚠️ **Achtung:** Dieses Repository befindet sich noch im Aufbau! Funktionen können unvollständig sein, Fehler auftreten und sich jederzeit ändern. Nutzung auf eigene Verantwortung.
+
+
 # Finanzfluss Exporter 🚀
 
 ![Python](https://img.shields.io/badge/python-3.8%2B-blue)
