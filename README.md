@@ -74,6 +74,8 @@ ACCOUNTS = {
 EMAIL = "deine_email@beispiel.de"  # Hier deine E-Mail eintragen
 ```
 
+![AccountsURL](images/findPortfolioURL.png)
+
 ---
 
 ## 🚀 Nutzung
