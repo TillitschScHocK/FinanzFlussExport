@@ -4,7 +4,8 @@
 ![Selenium](https://img.shields.io/badge/selenium-supported-green)
 ![License: MIT](https://img.shields.io/badge/license-MIT-yellow)
 
-**Finanzfluss Exporter** ist ein Python-Skript, das automatisch Transaktionen aus einer Web-Finanzanwendung ausliest und in einer JSON-Datei speichert. Ideal für Entwickler, die ihre Finanzdaten automatisiert analysieren oder weiterverarbeiten möchten.
+**Finanzfluss Exporter** ist ein Python-Skript, das automatisch Transaktionen aus einer Web-Finanzanwendung ausliest und in einer JSON-Datei speichert. Ideal für alle, die ihre Transaktionen aus verschiedenen Konten exportieren, zentral verwalten und für eigene Analysen oder Auswertungen weiterverarbeiten möchten.
+
 
 ---
 
