@@ -7,9 +7,19 @@
 
 > ⚠️ **Achtung:** Dieses Repository befindet sich noch im Aufbau! Funktionen können unvollständig sein, Fehler auftreten und sich jederzeit ändern. Nutzung auf eigene Verantwortung.
 
-**Finanzfluss Exporter** ist ein Python-Skript, das automatisch Transaktionen aus der Finanz-Webanwendung [Finanzfluss Copilot](https://www.finanzfluss.de/copilot)  ausliest und sicher in einer JSON-Datei speichert. Perfekt für alle, die ihre Finanzdaten zentral verwalten und analysieren möchten.
-
 ---
+
+## ℹ️ Wofür ist dieses Skript geeignet?
+
+Dieses Skript verarbeitet Transaktionen aus der offiziellen [Finanzfluss Copilot Website](https://www.finanzfluss.de/copilot).  
+Es automatisiert das Einloggen, Auslesen der Transaktionen und speichert diese sicher in einer lokalen **JSON-Datei**.  
+Das Skript ist ausschließlich für die Nutzung mit **eigenen Kontodaten** bestimmt.
+
+### 🔑 Wichtig
+- Keine Zugangsdaten oder API-Keys ins Repository einchecken.  
+- Das Skript umgeht keine Sicherheitsmechanismen und greift nur regulär über die Website auf die Daten zu.  
+- Nutzer sind selbst verantwortlich für die Einhaltung der Nutzungsbedingungen ihres Copilot-Accounts und den sicheren Umgang mit exportierten Daten.  
+
 
 ## ✨ Features
 
@@ -166,6 +176,6 @@ Die generierte `transaktionen.json`:
 
 ---
 
-## 📄 Lizenz
+## 📄 Lizenz  
 
-MIT License - siehe [LICENSE](LICENSE) Datei für Details.
+MIT License – siehe [LICENSE](LICENSE) Datei für Details.  
