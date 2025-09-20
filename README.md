@@ -167,13 +167,13 @@ Die generierte `transaktionen.json`:
 
 ---
 
-## 💡 Zukünftige Erweiterungen
+## 🔒 Status
+- [x] Passwortverschlüsselung fertig (Linux-Anpassung noch ausstehend)
 
-- [ ] Automatische Berichterstellung
-- [ ] CSV/Excel-Export
-- [ ] Depotbestand scrapen (Aktien, Fonds, Stückzahl, Kauf- und Tageskurs)
-- [ ] Dividendenübersicht inkl. geplanter Ausschüttungen
-
+## 💡 Geplante Erweiterungen
+- [ ] Konto-Sync über Finanzfluss (verbundene Bankkonten)
+- [ ] CSV-/Excel-Export
+- [ ] Depotdaten-Scraping (Aktien, Fonds, Stückzahl, Kauf- und Tageskurs)
 ---
 
 ## 📄 Lizenz  
