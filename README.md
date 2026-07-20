@@ -5,8 +5,6 @@
 ![Security](https://img.shields.io/badge/security-encrypted-brightgreen)
 ![License: MIT](https://img.shields.io/badge/license-MIT-yellow)
 
-> ⚠️ **Achtung:** Dieses Repository befindet sich noch im Aufbau! Funktionen können unvollständig sein, Fehler auftreten und sich jederzeit ändern. Nutzung auf eigene Verantwortung.
-
 ---
 
 ## ℹ️ Wofür ist dieses Skript geeignet?
